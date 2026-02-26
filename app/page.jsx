@@ -7,7 +7,7 @@ export default function HomePage() {
   const { user, loadingUser } = useAuth();
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen">
       {/* subtle brand background */}
       <div className="bg-gradient-to-b from-emerald-50 via-white to-white">
         <div className="mx-auto max-w-6xl px-6 py-16">
