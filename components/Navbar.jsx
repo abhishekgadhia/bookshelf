@@ -1,30 +1,45 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useAuth } from "../lib/AuthContext";
 
 export default function Navbar() {
   const { user, loadingUser, logout } = useAuth();
 
   return (
-    <header className="border-b border-neutral-200 bg-white">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-      <Link href="/" className="flex items-center">
-  <Image
-    src="/logo.png"
-    alt="BookShelf Logo"
-    width={140}
-    height={50}
-    priority
-  />
-</Link>
+    <header
+      className="
+        sticky top-0 z-50 w-full
+        backdrop-blur-md
+        bg-gradient-to-b from-white/60 to-white/20
+        border-b border-white/20
+      "
+    >
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
 
-        <nav className="flex items-center gap-4 text-sm">
-          <Link href="/search" className="text-neutral-700 hover:text-emerald-700">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3">
+          <img
+            src="/logo.png"
+            alt="BookShelf"
+            className="h-16 w-auto"
+          />
+        </Link>
+
+        {/* Navigation */}
+        <nav className="flex items-center gap-6 text-sm font-medium">
+
+          <Link
+            href="/search"
+            className="text-neutral-700 transition hover:text-emerald-700"
+          >
             Search
           </Link>
-          <Link href="/shelf" className="text-neutral-700 hover:text-emerald-700">
+
+          <Link
+            href="/shelf"
+            className="text-neutral-700 transition hover:text-emerald-700"
+          >
             My Shelf
           </Link>
 
@@ -33,9 +48,16 @@ export default function Navbar() {
               <span className="hidden sm:inline text-neutral-600">
                 {user.email}
               </span>
+
               <button
                 onClick={logout}
-                className="rounded-lg border border-neutral-300 px-4 py-2 hover:bg-neutral-50"
+                className="
+                  rounded-lg
+                  border border-neutral-300/60
+                  px-4 py-2
+                  transition
+                  hover:bg-white/50
+                "
               >
                 Logout
               </button>
@@ -43,7 +65,14 @@ export default function Navbar() {
           ) : (
             <Link
               href="/auth/signin"
-              className="rounded-lg bg-emerald-600 px-4 py-2 text-white hover:bg-emerald-700"
+              className="
+                rounded-lg
+                bg-emerald-600
+                px-4 py-2
+                text-white
+                transition
+                hover:bg-emerald-700
+              "
             >
               Sign In
             </Link>

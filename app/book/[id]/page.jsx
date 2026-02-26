@@ -163,7 +163,7 @@ export default function BookDetailsPage() {
             </div>
           </div>
 
-          <div className="mt-10 rounded-2xl border border-neutral-200 bg-white p-5">
+          <div className="mt-10 rounded-2xl border border-neutral-200 p-5">
             <p className="font-semibold">Related info (Wikipedia)</p>
             {wiki?.extract ? (
               <>

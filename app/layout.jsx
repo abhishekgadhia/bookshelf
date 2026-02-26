@@ -1,6 +1,8 @@
+// app/layout.jsx
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import { AuthProvider } from "../lib/AuthContext";
+
 
 export const metadata = {
   title: "BookShelf",
@@ -10,11 +12,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-neutral-50 text-neutral-900">
-        <AuthProvider>
-          <Navbar />
-          {children}
-        </AuthProvider>
+      <body className="text-neutral-900">
+        <div className="min-h-screen bg-gradient-to-b from-emerald-50 via-white to-white">
+          <AuthProvider>
+            <Navbar />
+            {children}
+          </AuthProvider>
+        </div>
       </body>
     </html>
   );

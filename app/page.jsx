@@ -1,42 +1,93 @@
+"use client";
+
 import Link from "next/link";
+import { useAuth } from "../lib/AuthContext";
 
 export default function HomePage() {
+  const { user, loadingUser } = useAuth();
+
   return (
-    <main className="mx-auto max-w-5xl px-6 py-12">
-      <h1 className="text-4xl font-bold tracking-tight">Your personal BookShelf</h1>
-      <p className="mt-4 max-w-2xl text-lg text-neutral-700">
-        Search books, save them to your shelf, and track progress with private notes.
-      </p>
+    <main className="min-h-screen bg-white">
+      {/* subtle brand background */}
+      <div className="bg-gradient-to-b from-emerald-50 via-white to-white">
+        <div className="mx-auto max-w-6xl px-6 py-16">
+          {/* HERO */}
+          <div className="rounded-3xl border border-emerald-100 bg-white p-10 shadow-sm">
+            <p className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
+              BookShelf • Save what you find
+            </p>
 
-      <div className="mt-8 flex flex-wrap gap-3">
-        <Link
-          href="/search"
-          className="rounded-xl bg-emerald-600 px-5 py-3 text-white hover:bg-emerald-700"
-        >
-          Start searching
-        </Link>
-        <Link
-          href="/shelf"
-          className="rounded-xl border border-neutral-300 bg-white px-5 py-3 hover:bg-neutral-50"
-        >
-          View my shelf
-        </Link>
-      </div>
+            <h1 className="mt-5 text-4xl font-semibold tracking-tight text-neutral-900 sm:text-5xl">
+              Your personal <span className="text-emerald-700">BookShelf</span>
+            </h1>
 
-      <div className="mt-10 grid gap-4 md:grid-cols-3">
-        <div className="rounded-2xl border border-neutral-200 bg-white p-5">
-          <p className="font-semibold">🔍 Search</p>
-          <p className="mt-1 text-sm text-neutral-700">Find books by title or author.</p>
-        </div>
-        <div className="rounded-2xl border border-neutral-200 bg-white p-5">
-          <p className="font-semibold">📚 Save</p>
-          <p className="mt-1 text-sm text-neutral-700">Add books to your shelf.</p>
-        </div>
-        <div className="rounded-2xl border border-neutral-200 bg-white p-5">
-          <p className="font-semibold">📝 Track</p>
-          <p className="mt-1 text-sm text-neutral-700">Notes + progress while reading.</p>
+            <p className="mt-4 max-w-2xl text-neutral-600">
+              Search books, save them to your shelf, and keep your reading list
+              organized with a clean, simple flow.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Link
+                href="/search"
+                className="rounded-xl bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700 active:scale-[0.99]"
+              >
+                Start searching
+              </Link>
+
+              <Link
+                href="/shelf"
+                className="rounded-xl border border-neutral-300 bg-white px-6 py-3 text-sm font-semibold text-neutral-900 hover:bg-neutral-50 active:scale-[0.99]"
+              >
+                View my shelf
+              </Link>
+
+              {!loadingUser && !user && (
+                <Link
+                  href="/auth/signin"
+                  className="rounded-xl border border-emerald-200 bg-emerald-50 px-6 py-3 text-sm font-semibold text-emerald-700 hover:bg-emerald-100 active:scale-[0.99]"
+                >
+                  Sign in
+                </Link>
+              )}
+            </div>
+          </div>
+
+          {/* FEATURES */}
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <FeatureCard
+              title="Search"
+              desc="Find books by title or author using Open Library."
+              icon="🔎"
+            />
+            <FeatureCard
+              title="Save"
+              desc="Add books to your shelf with one click."
+              icon="📚"
+            />
+            <FeatureCard
+              title="Track"
+              desc="Keep your list organized and easy to revisit."
+              icon="✅"
+            />
+          </div>
         </div>
       </div>
     </main>
+  );
+}
+
+function FeatureCard({ title, desc, icon }) {
+  return (
+    <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+      <div className="flex items-start gap-3">
+        <div className="grid h-10 w-10 place-items-center rounded-xl bg-emerald-50 text-lg">
+          {icon}
+        </div>
+        <div>
+          <h3 className="font-semibold text-neutral-900">{title}</h3>
+          <p className="mt-1 text-sm text-neutral-600">{desc}</p>
+        </div>
+      </div>
+    </div>
   );
 }

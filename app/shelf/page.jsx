@@ -104,7 +104,7 @@ export default function ShelfPage() {
           {items.map((b) => (
             <div
               key={b.id}
-              className="rounded-2xl border border-neutral-200 bg-white p-4"
+              className="rounded-2xl border border-neutral-200 p-4"
             >
               {b.cover ? (
                 <img

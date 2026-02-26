@@ -40,7 +40,7 @@ export default function SearchPage() {
           <Link
             key={book.id}
             href={`/book/${encodeURIComponent(book.id)}`}
-            className="rounded-2xl border border-neutral-200 bg-white p-4 hover:shadow"
+            className="rounded-2xl border border-neutral-200 p-4 hover:shadow"
           >
             {book.cover ? (
               <img
