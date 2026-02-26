@@ -1,3 +1,7 @@
+// Purpose:
+// This page shows all books saved by the logged-in user.
+// Data is retrieved from Firestore and users can remove books
+// from their shelf in real time.
 "use client";
 
 import { useEffect, useState } from "react";

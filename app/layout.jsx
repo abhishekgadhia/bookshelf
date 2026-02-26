@@ -1,4 +1,8 @@
 // app/layout.jsx
+// Purpose:
+// This file defines the global layout of the application.
+// It applies the shared page structure including the navigation bar,
+// authentication provider, and background styling that appears on all pages.
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import { AuthProvider } from "../lib/AuthContext";

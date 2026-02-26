@@ -1,3 +1,7 @@
+// Purpose:
+// This is the landing page of the BookShelf application.
+// It introduces the app and allows users to navigate to search,
+// view their shelf, or sign in to their account.
 "use client";
 
 import Link from "next/link";

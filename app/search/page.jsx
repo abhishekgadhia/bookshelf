@@ -1,3 +1,6 @@
+// Purpose:
+// This page allows users to search for books using the Open Library API.
+// The results are displayed as book cards which link to detailed book pages.
 "use client";
 
 import { useState } from "react";

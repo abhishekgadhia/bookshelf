@@ -1,3 +1,7 @@
+// Purpose:
+// This page displays detailed information about a selected book.
+// It fetches data from Open Library and Wikipedia APIs and allows
+// authenticated users to save the book to their personal shelf.
 "use client";
 
 import { useEffect, useState } from "react";

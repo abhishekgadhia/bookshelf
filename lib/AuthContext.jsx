@@ -1,3 +1,7 @@
+// Purpose:
+// This file manages global authentication state using React Context.
+// It keeps track of the current logged-in user and provides login
+// and logout functionality across the application.
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";

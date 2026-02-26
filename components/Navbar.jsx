@@ -1,3 +1,7 @@
+// Purpose:
+// This component displays the navigation bar shown on every page.
+// It provides links to different sections of the app and shows
+// authentication options such as Sign In or Logout depending on user status.
 "use client";
 
 import Link from "next/link";

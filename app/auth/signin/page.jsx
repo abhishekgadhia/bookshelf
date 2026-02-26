@@ -1,3 +1,6 @@
+// Purpose:
+// This page allows existing users to sign into their account
+// using Firebase Authentication.
 "use client";
 
 import { useState } from "react";
