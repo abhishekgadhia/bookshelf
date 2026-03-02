@@ -61,17 +61,17 @@ export default function HomePage() {
             <FeatureCard
               title="Search"
               desc="Find books by title or author using Open Library."
-              icon="🔎"
+              
             />
             <FeatureCard
               title="Save"
               desc="Add books to your shelf with one click."
-              icon="📚"
+              
             />
             <FeatureCard
               title="Track"
               desc="Keep your list organized and easy to revisit."
-              icon="✅"
+              
             />
           </div>
         </div>

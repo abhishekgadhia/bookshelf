@@ -95,7 +95,7 @@ export default function BookDetailsPage() {
     
         await addToShelf(user.uid, bookToSave);
     
-        setSavedMsg("Saved to your shelf ✅");
+        setSavedMsg("Saved to your shelf");
     } catch (e) {
         console.error("Save error:", e);
         setSavedMsg(e?.message || "Failed to save.");

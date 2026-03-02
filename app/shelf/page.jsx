@@ -22,7 +22,7 @@ export default function ShelfPage() {
   useEffect(() => {
     if (loadingUser) return;
 
-    // ✅ Protected UX: redirect if not logged in
+    //redirect if not logged in
     if (!user) {
       router.push("/auth/signin");
       return;
